@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>选择</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui"/>
+<!--<link href="css/animate.min.css" type="text/css" rel="stylesheet"/>-->
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+
+<style>
+		
+		*{padding: 0;margin: 0;}
+		
+		/*自动缩放以及loading框架*/
+		.swipe-wrap{width: 100%;height: 100%;position: relative;overflow: hidden;}
+		.swipe{position:absolute;width:100%;}
+		.swipe-box{width: 100%;overflow: hidden;}
+		
+		.m_clear{zoom:1;}
+		.m_clear:after{content:"";display:block;clear:both;}
+		.m_porR {position: relative;}
+		.m_porA {position: absolute;background: #fff;width: 100%;height: 100%;}
+		.m_fl {float:left;}
+		.m_fr {float:right;}
+		.m_db {display: block;}
+		.m_dn {display:none;}
+		.m_oh {overflow:hidden;}
+		.m_w100,.m_wrapper,.loadFont {width:100%;}
+		.m_mAuto {margin: 0 auto;}
+		.m_tac {text-align:center;}
+		.m_bgn {background:none;}
+		.m_fs10 {font-size:10px;}
+		.m_fs12 {font-size:12px;}
+		.m_fs14 {font-size:14px;}
+		.m_fs16 {font-size:16px;}
+		.m_fs18 {font-size:18px;}
+		.m_fs22 {font-size:22px;}
+		.m_fw {font-weight:bold;}
+		.cfff {color:#fff;}
+		.m_inpNoBg {-webkit-appearance:none;background:none;}
+		.changeWord { line-height:0;font-size:0; overflow:hidden;color:rgba(255,255,255,0);}
+		
+		/*lufylegend.js样式*/
+		.legend {position:absolute;z-index:2;font-size:0px;}
+		
+		/*loadding样式*/
+		.load {top:0;left:0;width:100%;}
+		.loadImg {width:20%;margin:50% 0 0 40%;}
+	    .loadFont{
+	    	color: #b8945c;
+	    }
+	    
+	    
+	    /*DIV*/
+	   .cropit-image-preview {
+		  /* You can specify preview size in CSS */
+		  width:100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0;
+		  left:0;
+		  z-index: 0;
+		  /*-webkit-transform-origin:left top; 
+		  -webkit-transform: rotate(90deg);*/
+		}
+		
+		
+		</style>
+
+          <!--<img class="fan" src="images/fan.jpg" width="100%" height="auto" style="margin-top: 30px;" />-->
+</head>
+<body>
+	
+	<!--loading-->
+    <div class="m_porA load">
+    	
+    	<div class="cirbao">
+    		<img src="images/load_circle.png" class="load_circle" />
+    	</div>
+        
+        <img src="images/loadtext.png" class="loadtext" />
+        
+        <div class="jd">
+    		11%
+    	</div>
+    	
+    	
+	    <!--<img src="images/load_text.png" class="load_text" />
+	    <div class="load_ani">
+	    	<div class="ani"></div>
+	    </div>-->
+	</div>
+	
+	<!--main-->
+	 <div class="m_wrapper" style="opacity:0;">
+	 	
+	 	<audio id="audio" src="xh.mp3" style="position: absolute;left: 0;top: 0;z-index: 0;"  loop="loop"></audio>
+	 	
+	 	<img src="iamges/xz_bg.jpg" style="z-index: 1;position: absolute;left: 0;top: 0;width: 100%;height: 100%;" />
+        <img src="images/gq_bg.jpg" class="gq" />
+        <img src="images/gq_ren.png" class="gq_ren" />
+        <img src="images/xz_bg.jpg" class="xz_bg"  />
+        <img src="images/xz_ren.png" class="xz_ren" />
+        <img src="images/fgx.png" class="fgx">
+        
+        
+        
+        <img src="images/index20.png" class="index20 indeximg" />
+        <img src="images/index20t.png" class="index20t indeximg" />
+         <img src="images/index45.png" class="index45 indeximg" />
+        <img src="images/index45t.png" class="index45t indeximg" />
+        
+       <img src="images/indexbottom.png" class="indexbottom" />
+          
+        
+        <div class="gb gbl"></div>
+        <div class="gb gbr"></div>
+        
+        
+        <div class="hsjs">
+        	<img src="images/1.png" class="shd shd1" width="100%" height="auto" />
+        	<img src="images/2.png" class="shd shd2" width="100%" height="auto" style="display: none;"/>
+        	<img src="images/3.png" class="shd shd3" width="100%" height="auto" style="display: none;"/>
+        	<img src="images/4.png" class="shd shd4" width="100%" height="auto" style="display: none;"/>
+        	<img src="images/5.png" class="shd shd5" width="100%" height="auto" style="display: none;"/>
+        	<img src="images/6.png" class="shd shd6" width="100%" height="auto" style="display: none;"/>
+        	<img src="images/7.png" class="shd shd7" width="100%" height="auto" style="display: none;" />
+        </div>
+        
+        <div class="hsjs_gai">
+        	
+        </div>
+        
+        
+        
+        <div class="vedio" style="display: none;">
+        	    <video id="yx" class="yx" src="" style="width:auto;height:101%;display: block;"   x-webkit-airplay="true" webkit-playsinline="true" preload="auto"  >
+				您的浏览器不支持 video 标签。
+				</video>
+				<!--<img src="images/qe.jpg" style="width: 100%;height: 100%;display: block;" />-->
+        </div>
+        
+        <img src="images/gc.gif" class="gc" style="display: none;position: absolute;z-index: 208;width: 100%;height: 100%;left: 0;top: 0;opacity: 0;" />
+        
+        
+        <!--brother-->
+        <div class="brother" style="display: none;">
+	        <img class="gbimg ershi ershitrans text"  src="images/20.png" />
+	        <img class="gbimg slc ershitrans text"  src="images/slc.png" />
+	        <img class="gbimg sishi sishitrans text"  src="images/42.png" style="z-index: 102;" />
+	        <img class="gbimg qr sishitrans sishitrans2 text"  src="images/qr.png" style="z-index: 102;" />
+	        <img class="gbimg title titletrans text"  src="images/title.png" style="z-index: 102;" />
+	        <img class="gbimg title_small title_smalltrans text"  src="images/title_small.png" style="z-index: 102;" />
+
+        </div>
+         
+         
+         <!--单人-->
+         <div class="danr" style="display:none;">
+         	<img src="images/danr_t1.png" class="danr_t1" />
+         	<img src="images/danr_t2.png" class="danr_t2" />
+         	<a href="http://wx.fractalist.com.cn/yixin/h5/diy/diy.html"><div class="diybut"></div></a>
+         </div>
+        
+        
+        
+   
+   
+
+	</div>
+	 
+
+
+
+	<script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/WX_share.js"></script>
+	<script src="js/index.js"></script>
+    <script>
+   
+        var yx=document.getElementById('yx');
+        var mp=document.getElementById('audio');
+        var vid = document.getElementById('yx');
+//       var u = navigator.userAgent, app = navigator.appVersion;
+//		 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+//		 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+//		 alert('是否是Android：'+isAndroid);
+//       alert('是否是iOS：'+isiOS);
+         
+//		 if(isAndroid==true){
+//		 	jQuery('#yx').css({
+//		 		"width":"100%",
+//		 		"height":"100%"
+//		 	});
+//		 	
+//		 }
+//		 
+//		 if(isiOS==true){
+//		 	jQuery('#yx').css({
+//		 		"width":"100%",
+//		 		"height":"auto"
+//		 	});
+//		 }
+//     
+ 
+ 
+       /*获取加载进度*/
+       var aImg = document.getElementsByTagName('img');
+//     alert(aImg.length);
+       var iNow=0;
+	    for(var i=0;i<aImg.length;i++){
+		  (function(i){
+			var yImg = new Image();
+			yImg.onload = function(){
+			iNow++;	
+			
+			var pros=parseInt(iNow/aImg.length*100);
+			
+			if(iNow==(aImg.length-1)){
+				pros=100;
+			}
+		    if(pros<15){
+		    	pros=11;
+		    }else{
+		    	pros=pros;
+		    }
+		    
+		    
+		    setTimeout(function(){
+//		    	console.log(pros);
+		    	jQuery('.jd').text(pros+'%');
+		    },500);
+			
+		};
+		 yImg.src=aImg[i].src;
+		 })(i);
+		}	
+         /*获取加载进度end*/
+ 
+ 
+
+	   
+	   
+	   Zepto('.yx').attr('src','http://7xng5q.com1.z0.glb.clouddn.com/yx.mp4');
+//	   Zepto('.yx').attr('src','yx.mp4');
+	  
+	  
+       
+//     Zepto('.diybut').tap(function(){
+//     	Zepto('.danr').hide();
+//     	Zepto('.lb').show();
+//     	Zepto('.vedio').hide();
+//     });
+       
+       
+       
+       Zepto('.hsjs_gai').swipe(function(){
+       	
+
+            Zepto('.indeximg,.indexbottom').hide();
+            
+	       	Zepto('.fgx,.text').hide();
+	       	Zepto('.gq').addClass('gq_out');
+	       	Zepto('.gq_ren').addClass('gq_ren_out');
+	       	Zepto('.xz_bg').addClass('xz_bg_in');
+	       	Zepto('.xz_ren').addClass('xz_ren_in');
+
+
+//          jQuery('.gq,.gq_ren').animate({
+//          	"left":"-50%"
+//          },"linear");
+//	
+//	        jQuery('.xz_bg').animate({
+//          	"left":"0"
+//          },"linear");
+//          
+//            jQuery('.xz_ren').animate({
+//          	"left":"3.5%"
+//          },"linear");
+	        
+	
+	   	 	Zepto('.hsjs').hide();
+	
+	        jQuery('.gc').fadeIn(500);
+	        mp.pause();
+	       	  
+	   	 	
+	   	 	setTimeout(function(){
+	   	 		jQuery('.xz_ren').fadeOut(600);
+	   	 		jQuery('.vedio').fadeIn(600);
+//              jQuery('.vedio').show()
+	   	 		yx.play();
+	   	 		yx.pause();
+	
+	
+	   	 	},5);
+	   	 	
+	   	 	
+	   	 	setTimeout(function(){
+	   	 		jQuery('.gc').fadeOut(500);
+	   	 		mp.pause();
+	   	 		yx.play();
+                
+	   	 	},6);
+
+
+//          yx.allowsInlineMediaPlayback = true;
+	        
+//	        var flag=0;
+//	       	vid.onplay=function(){
+//	       		flag=flag+1;
+//	       	    if(flag==2){
+//	       	      jQuery('.gc').fadeOut(500);
+//	       	    }
+//	       	};
+		
+		    
+		
+		
+	
+//		   vid.addEventListener('progress', onProgress, false);
+//		
+//		   function onProgress(e){
+//			
+//			    var vid = document.getElementById('yx');
+//			    var percent = null;
+//			
+//			    if (vid.buffered.length > 0 && vid.buffered.end && vid.duration) {
+//			        percent = vid.buffered.end(0) / vid.duration;
+//			    } else if (vid.bytesTotal != undefined && vid.bytesTotal > 0 && vid.bufferedBytes != undefined) {
+//			        percent = vid.bufferedBytes / vid.bytesTotal;
+//			    }
+//			
+//			    if (percent !== null) {
+//			        percent = 100 * Math.min(1, Math.max(0, percent));
+//			
+//			        if(percent<=3){
+//			           yx.pause();
+//			        }else{
+//			           yx.play();
+//			        }
+//			        
+////			        console.log(percent);
+//			        
+//			    }
+//			
+//			}
+//	
+	
+	        
+	
+//          实时监测视频播放的进度;
+//	        vid.ontimeupdate = function() {myFunction()};
+//
+//			function myFunction() {
+//			// Display the current position of the video in a <p> element with id="demo"
+//			    console.log(vid.currentTime);
+//			}
+
+
+
+            //检测视频是否已播放结束
+            
+           vid.addEventListener('ended',function(){
+	   	 		jQuery('.danr').fadeIn(800);
+	   	 		jQuery('.vedio').fadeOut(800);//兼容安卓
+		   },false);
+
+            
+         
+       	
+       });
+    	
+  
+       Zepto('#yx').tap(function(){
+       	return false;
+       });
+    	
+    	
+    	
+  	  
+    	
+    </script>
+	
+
+</body>
+</html>
